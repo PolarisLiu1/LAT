@@ -385,7 +385,6 @@ if __name__ == '__main__':
                     'multi_image': multi_image,
                 }
                 logger.info(f"idx: {idx + offset}")
-                logger.info(f"type: {row_dict['long_answer_type']}")
                 logger.info(f"bbox: {ground_truth_box}")
                 logger.info(f"output_text: {colored(batch_output_text, 'green')}")
                 logger.info(f"ground_truth: {colored(ground_truth_ans, 'red')}")
