@@ -47,12 +47,9 @@ bash scripts/grpo.sh
 python test.py
 ```
 
-## Cases
+## Case
 
 <p align="center"><img src="./fig/case1.jpg" width="80%"></p>
-<p align="center"><img src="./fig/case2.jpg" width="80%"></p>
-<p align="center"><img src="./fig/case3.jpg" width="80%"></p>
-<p align="center"><img src="./fig/case4.jpg" width="80%"></p>
 
 
 
