@@ -29,7 +29,7 @@ torchrun --nproc_per_node="4" \
     --attn_implementation flash_attention_2 \
     --learning_rate 5e-5 \
     --lr_scheduler_type="cosine" \
-    --num_train_epochs 2 \
+    --num_train_epochs 1 \
     --run_name $RUN_NAME \
     --dataset_name $DATA_NAME \
     --single_image true \
