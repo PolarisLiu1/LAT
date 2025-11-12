@@ -28,14 +28,24 @@ pip install -r requirements.txt
 ## Run
 **1. Download Data**
 
-Prepare [VISA](https://huggingface.co/collections/MrLight/visa-rag-with-visual-source-attribution) datasets.
+Prepare [VISA](https://huggingface.co/collections/MrLight/visa-rag-with-visual-source-attribution) datasets. Place the downloaded datasets under the /data/visa/(paper/wiki/fine-web) directories. Modify the paths as necessary to match your local environment.
 
-To obtain images for the multi-candidate setup, please run [/src/image_address.py](/src/image_address.py).
+To obtain images for the multi-candidate setup, please run [/src/image_address.py](/src/image_address.py). All images will be stored within their corresponding directories.
 
 **2. Cold start**
+
+
 ```sh
 bash scripts/sft_inference.sh
 ```
+> [!Important]
+> 1. After each training session, merge the LoRA parameters by executing the following code:
+```
+model = PeftModel.from_pretrained(model, lora_name_or_path)
+model = model.merge_and_unload()
+model.save_pretrained("merged_model")
+```
+> 2. For multi-image training scenarios, initialize the multi-image model using the single-image trained version. Subsequently, perform supervised fine-tuning (SFT) on the multi-image CoE data in $\mathcal{D}_{\text{final}}$, fine-tuning only the LoRA adapter of the language model while keeping the vision transformer (ViT) frozen to minimize GPU memory consumption.
 
 **3. Reinforcement Learning**
 ```sh
@@ -44,12 +54,16 @@ bash scripts/grpo.sh
 
 **4. Evaluate Model**
 ```sh
-python test.py
+python evaluation.py
 ```
 
 ## Case
 
 <p align="center"><img src="./fig/case1.jpg" width="80%"></p>
+
+
+More details and analyses about experimental results can be found in our paper.
+
 
 
 
