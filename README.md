@@ -22,6 +22,8 @@ Coming soon
 The required dependencies and their versions can be found in the [`requirements.txt`](requirements.txt). 
 To install all the required packages along with their dependencies, run
 ```sh
+# python >= 3.10
+
 pip install -r requirements.txt
 ```
 
