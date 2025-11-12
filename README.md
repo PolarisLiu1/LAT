@@ -47,6 +47,17 @@ bash scripts/grpo.sh
 python test.py
 ```
 
+## Cases
+
+<p align="center"><img src="./fig/case1.png" width="80%"></p>
+<p align="center"><img src="./fig/case2.png" width="80%"></p>
+<p align="center"><img src="./fig/case3.png" width="80%"></p>
+<p align="center"><img src="./fig/case4.png" width="80%"></p>
+
+
+
+
+
 ## Acknowledgement
 Our code have been developed based on [VLM-R1](https://github.com/om-ai-lab/VLM-R1), [VISA](https://arxiv.org/abs/2412.14457). We thank their valuable works.
 
