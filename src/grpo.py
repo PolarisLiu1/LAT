@@ -491,6 +491,7 @@ def main(script_args, training_args, model_args):
         min_pixels=script_args.min_pixels,
         torch_dtype=model_args.torch_dtype,
         callbacks=[swanlab_callback],
+        single_image=script_args.single_image
     )
 
     # Train and push the model to the Hub
