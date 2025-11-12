@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 Prepare [VISA](https://huggingface.co/collections/MrLight/visa-rag-with-visual-source-attribution) datasets. Place the downloaded datasets under the /data/visa/(paper/wiki/fine-web) directories. Modify the paths as necessary to match your local environment.
 
-To obtain images for the multi-candidate setup, please run [/src/image_address.py](/src/image_address.py). All images will be stored within their corresponding directories.
+To obtain images for the multi-candidate setup, please run [/src/image_address.py](/src/image_address.py).
 
 **2. Cold start**
 
