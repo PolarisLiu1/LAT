@@ -39,13 +39,14 @@ To obtain images for the multi-candidate setup, please run [/src/image_address.p
 bash scripts/sft_inference.sh
 ```
 > [!Important]
-> 1. After each training session, merge the LoRA parameters by executing the following code:
+> 1. After each training session, merge the LoRA parameters by executing the following code.
+> 2. For multi-image training scenarios, initialize the multi-image model using the single-image trained version. Subsequently, perform supervised fine-tuning (SFT) on the multi-image CoE data in $\mathcal{D}_{\text{final}}$, fine-tuning only the LoRA adapter of the language model while keeping the vision transformer (ViT) frozen to minimize GPU memory consumption.
 ```
 model = PeftModel.from_pretrained(model, lora_name_or_path)
 model = model.merge_and_unload()
 model.save_pretrained("merged_model")
 ```
-> 2. For multi-image training scenarios, initialize the multi-image model using the single-image trained version. Subsequently, perform supervised fine-tuning (SFT) on the multi-image CoE data in $\mathcal{D}_{\text{final}}$, fine-tuning only the LoRA adapter of the language model while keeping the vision transformer (ViT) frozen to minimize GPU memory consumption.
+
 
 **3. Reinforcement Learning**
 ```sh
@@ -54,7 +55,7 @@ bash scripts/grpo.sh
 
 **4. Evaluate Model**
 ```sh
-python evaluation.py
+python src/evaluation.py
 ```
 
 ## Case
