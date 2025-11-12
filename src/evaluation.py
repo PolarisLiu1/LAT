@@ -22,13 +22,16 @@ MODEL_PATH="model to test"
 LORA_MODEL_NAME="Lora path"
 
 DATA_ROOT = "../data/visa"
+
 multi_image = False
 
 setting = "multi" if multi_image else "single"
 form = "direct" if direct_answer else "coe"
 
 TEST_DATASETS = ['wiki']
-OUTPUT_PATH=f"rec_results_qwen2_5vl_{TEST_DATASETS[0]}_{setting}_{form}.jsonl"
+OUTPUT_PATH=f"../output/rec_results_qwen2_5vl_{TEST_DATASETS[0]}_{setting}_{form}.jsonl"
+os.makedirs("../output", exist_ok=True)
+
 
 SYSTEM_PROMPT_DIRECT = """Given a document image and a relevant question, you should provide the final answer in the following format: "The answer is: ...".\n\n"""
 SYSTEM_PROMPT_DIRECT_MULTI = """Given document images and a relevant question, you should provide the final answer in the following format: "The answer is: ...".\n\n"""
@@ -297,9 +300,8 @@ if __name__ == '__main__':
         correct_number_acc = 0
         correct_number_step = 0
         total_number = 0
-        output_path = OUTPUT_PATH
         offset = 0
-        with open(output_path, "a") as f:
+        with open(OUTPUT_PATH, "a") as f:
             for idx, row in enumerate(test_df[offset:]):
                 row_dict = row.to_dict()
                 if multi_image:
