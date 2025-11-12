@@ -3,7 +3,6 @@ import glob
 import pyarrow as pa
 from tqdm import tqdm
 import polars as pl
-import torch
 import io
 from PIL import Image
 from typing import List, Optional, Union
