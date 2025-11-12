@@ -48,7 +48,7 @@ from peft import PeftModel
 
 model = PeftModel.from_pretrained(model, lora_name_or_path)
 model = model.merge_and_unload()
-model.save_pretrained("merged_model")
+model.save_pretrained("merged_model_path")
 ```
 
 
@@ -56,7 +56,7 @@ model.save_pretrained("merged_model")
 ```sh
 bash scripts/grpo.sh
 ```
-After SFT training, the LoRA parameters need to be merged into the base model, and the ·model_name_or_path· should be updated accordingly.
+After SFT training, the LoRA parameters need to be merged into the base model, and the `model_name_or_path` should be updated accordingly.
 
 
 **4. Evaluate Model**
