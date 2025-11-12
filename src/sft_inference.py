@@ -119,7 +119,7 @@ Given document images and a relevant question, you should first analysis the ima
 3. Each bounding box must be formatted as:
 Bounding box: {"bbox_2d": [x1, y1, x2, y2], "Image_index": image_index_starting_from_1}"""
 
-DATA_ROOT = "./data/cold_start_input"
+DATA_ROOT = "../data/cold_start_input"
 processor = None
 vision_modules_keywords = ["visual"]
 columns_to_read = ['image', 'id', 'question', 'short_answer', 'bounding_box', 'candidates']
