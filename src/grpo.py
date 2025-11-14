@@ -164,7 +164,7 @@ class LazySupervisedDataset(Dataset):
             if SINGLE_IMAGE:
                 self.list_data_dict = [row for idx, row in enumerate(df_all.iter_rows(named=True))]
             else:
-                df_all = df_all.sample(n=df_all.height, shuffle=True, seed=42)
+                df_all = df_all.sample(n=df_all.height, shuffle=True, seed=3407)
                 self.list_data_dict = [row for idx, row in enumerate(df_all.iter_rows(named=True)) if (len(row['candidates']) > 0)]
 
             if not script_args.all_data:
