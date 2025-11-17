@@ -450,7 +450,7 @@ def step_reward(completions, **kwargs):
                 
                 if int(idx) == -1:
                     reward = 0.0
-                if int(idx) == -1 and ("no answer" in normalize_text(student_answer) or "not" in normalize_text(student_answer)):
+                if int(idx) == -1 and "no answer" in normalize_text(student_answer):
                     reward = 1.0
 
                 
