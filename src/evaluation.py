@@ -377,7 +377,7 @@ if __name__ == '__main__':
                             correct = 1
                 ground_truth_ans = row_dict['short_answer']
                 if multi_image and row_dict['pos_idx'] == -1:
-                    if ("no answer" in batch_output_text[0].lower()) or ("not" in batch_output_text[0].lower()):
+                    if ("no answer" in batch_output_text[0].lower()):
                         correct_acc = 1
                         correct = 1 if not direct_answer else 0
                     else:
