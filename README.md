@@ -13,7 +13,15 @@ This is the official code of the paper **Look as You Think: Unifying Reasoning a
 
 If you find this repository or paper useful, you can cite:
 ```
-Coming soon
+@misc{liu2025lookthinkunifyingreasoning,
+      title={Look As You Think: Unifying Reasoning and Visual Evidence Attribution for Verifiable Document RAG via Reinforcement Learning}, 
+      author={Shuochen Liu and Pengfei Luo and Chao Zhang and Yuhao Chen and Haotian Zhang and Qi Liu and Xin Kou and Tong Xu and Enhong Chen},
+      year={2025},
+      eprint={2511.12003},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2511.12003}, 
+}
 ```
 
 
